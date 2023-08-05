@@ -1,0 +1,31 @@
+@startuml
+autonumber
+
+participant     "App Server"    as server
+participant     "App"           as app
+participant     "Google Server" as google
+
+app -> app: Initiate high-value action
+app -> server: Ask for unique value
+server -> server: Generate a globally-unique value & Save it based on identifier of the App
+server -> app: Send the unique value
+app -> app: Prepare message to protect (i.e. Sensitive info. of the service)
+app -> app: Calculate hash of message to protect
+app -> app: Append the unique value to the hash of the message to protect
+app -> app: Call 'setNonce()' with the combined value
+app -> google: CAll the Play Integrity API
+google -> app: API returns signed result, e.g. JWE(JWS)
+app -> server: Send the message to protect along with the signed result
+
+alt "Verification via Google Server"
+    server -> google: Request verification of singed data
+    google -> server: Send the verified payload
+else "Verifying the App Server itself"
+    server -> server: Decrypt JWE
+    server -> server: Verify JWS
+end
+
+server -> server: Calculate hash of received payload
+server -> server: Verify that the 'nonce' field matches the unique value appended to the hash of the received payload
+
+@enduml
