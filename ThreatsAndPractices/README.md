@@ -18,5 +18,4 @@
 ### Use an appropriate nonce and sign the data that needs to be protected
 - References: https://developer.android.com/google/play/integrity/verdict#combine-both-protections
 
-![class-diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/leesangmin144/play-integrity-api-sample
-/main/ThreatsAndPractices/sequence1.puml)
+![class-diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/leesangmin144/play-integrity-api-sample/main/ThreatsAndPractices/sequence1.puml)
