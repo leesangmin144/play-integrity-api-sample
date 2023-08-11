@@ -25,7 +25,8 @@ else "Verifying the App Server itself"
     server -> server: Verify JWS
 end
 
-server -> server: Calculate hash of received payload
-server -> server: Verify that the 'nonce' field matches the unique value appended to the hash of the received payload
+server -> server: Verify timestamp of the payload
+server -> server: Verify the integrity by comparing whether the hash of the payload and hash of the message are the same
+server -> server: Verify that the nonce field matches the unique value appended to the hash of the received payload
 
 @enduml
