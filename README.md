@@ -1,6 +1,13 @@
 # Overview
+- This repository contains examples of implementing both Server-side and Client-side for the Google Play Integrity API, allowing you to explore its use cases. It also covers security threats and best practices for it.
+- Please refer to Google Play Integrity Docs too.
+    - Google Play Integrity API
+        - https://developer.android.com/google/play/integrity/overview
+    - Standard Request vs. Classic Request
+        - https://developer.android.com/google/play/integrity/classic
 
 # Security Threats & Best Practices
+[Go to Security Threats and Best Practices](/ThreatsAndPractices)
 
 # References
 - 1
